@@ -1,5 +1,4 @@
 # ʕ •́؈•̀) `worker-typescript-template`
-[![Dependabot auto-merge](https://github.com/thomasvincent/maintenance/actions/workflows/dependabot.yml/badge.svg)](https://github.com/thomasvincent/maintenance/actions/workflows/dependabot.yml)
 
 A batteries included template for kick starting a TypeScript Cloudflare worker project.
 

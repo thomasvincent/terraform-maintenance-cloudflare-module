@@ -1,9 +1,10 @@
-name = "worker-typescript-template"
+name = "maintenance-1"
 type = "javascript"
 zone_id = ""
 account_id = ""
 route = ""
 workers_dev = true
+compatibility_date = "2022-03-17"
 
 [build]
 command = "npm install && npm run build"
