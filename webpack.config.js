@@ -1,12 +1,13 @@
-const path = require('path')
+const path = require('path');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 
 module.exports = {
   entry: './src/index.ts',
   output: {
     filename: 'worker.js',
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -15,12 +16,20 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
-        options: {
-          // transpileOnly is useful to skip typescript checks occasionally:
-          // transpileOnly: true,
-        },
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              // transpileOnly is useful to skip typescript checks occasionally:
+              // transpileOnly: true,
+              configFile: path.resolve(__dirname, 'tsconfig.json'),
+            },
+          },
+        ],
       },
     ],
   },
+  plugins: [
+    new CheckerPlugin(),
+  ],
 }
