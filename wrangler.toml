@@ -8,5 +8,9 @@ compatibility_date = "2022-03-17"
 
 [build]
 command = "npm install && npm run build"
+
+[build.environment]
+NODE_ENV = "production"
+
 [build.upload]
 format = "service-worker"
